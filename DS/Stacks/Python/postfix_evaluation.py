@@ -1,27 +1,27 @@
-def postfix(str1, n):
+def postfix(str1):
     stack = []
 
-    for i in range(n):
-        if str1[i].isnumeric():
-            stack.append(int(str1[i]))
+    for i in str1:
+        if i.isnumeric():
+            stack.append(int(i))
 
         else:
-            if str1[i] == '+':
+            if i == '+':
                 op2 = stack.pop()
                 op1 = stack.pop()
                 stack.append(op1 + op2)
 
-            elif str1[i] == '-':
+            elif i == '-':
                 op2 = stack.pop()
                 op1 = stack.pop()
                 stack.append(op1 - op2)
 
-            elif str1[i] == '*':
+            elif i == '*':
                 op2 = stack.pop()
                 op1 = stack.pop()
                 stack.append(op1 * op2)
 
-            elif str1[i] == '/':
+            elif i == '/':
                 op2 = stack.pop()
                 op1 = stack.pop()
                 stack.append(op1 / op2)
@@ -30,6 +30,6 @@ def postfix(str1, n):
 
 
 s = "23*54*+9-"
-print(postfix(s, len(s)))
+print(postfix(s))
 
 # output: 17
