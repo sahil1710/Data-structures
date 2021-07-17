@@ -1,7 +1,7 @@
 def reverseString(str1, n):
     stack = []
-    for i in range(n):
-        stack.append(str1[i])
+    for i in str1:
+        stack.append(i)
 
     str1 = ""
 
