@@ -1,22 +1,21 @@
-def balanced_parentheses(str1, n):
+def balanced_parentheses(str1):
     stack = []
 
-    for i in range(n):
-        c = str1[i]
-        if c == '(' or c == '[' or c == '{':
-            stack.append(c)
+    for i in str1:
+        if i == '(' or i == '[' or i == '{':
+            stack.append(i)
 
-        elif c == ')' or c == ']' or c == '}':
+        elif i == ')' or i == ']' or i == '}':
             if len(stack) == 0:
                 return "parentheses are not balanced"
 
-            elif c == ')' and stack.pop() != '(':
+            elif i == ')' and stack.pop() != '(':
                 return "parentheses are not balanced"
 
-            elif c == '}' and stack.pop() != '{':
+            elif i == '}' and stack.pop() != '{':
                 return "parentheses are not balanced"
 
-            elif c == ']' and stack.pop() != '[':
+            elif i == ']' and stack.pop() != '[':
                 return "parentheses are not balanced"
 
     if not stack:
@@ -27,6 +26,6 @@ def balanced_parentheses(str1, n):
 
 
 s = "{}[](){[()][]}"
-print(balanced_parentheses(s, len(s)))
+print(balanced_parentheses(s))
 
 output: "parentheses are balanced"
