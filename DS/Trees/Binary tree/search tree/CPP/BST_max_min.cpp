@@ -78,10 +78,10 @@ int main(){
     root = Insert(root, 15);
     root = Insert(root, 30);
 
-    cout<<findMax(root)<<"\n";
-    cout<<findMin(root)<<"\n";
+    cout<<"MAX: "<<findMax(root)<<"\n";
+    cout<<"MIN: "<<findMin(root)<<"\n";
 }
 
 // output:
-// 30
-// 7
+// MAX: 30
+// MIN: 7
