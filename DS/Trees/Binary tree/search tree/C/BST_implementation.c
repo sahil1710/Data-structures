@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// structure for node
 struct bstNode
 {
     int data;
@@ -16,6 +17,8 @@ struct bstNode* bstNode(int data){
     temp->right = NULL;
     return temp;   
 } 
+
+// insert function 
 
 struct bstNode* insert(struct bstNode* pointer, int data){
     if(pointer == NULL){
@@ -33,6 +36,8 @@ struct bstNode* insert(struct bstNode* pointer, int data){
     return pointer;
 }
 
+//search function
+
 int search(struct bstNode* pointer, int data){
     if(pointer==NULL) return 0;
     if(data == pointer->data) 
@@ -44,6 +49,8 @@ int search(struct bstNode* pointer, int data){
     else
     return search(pointer->right, data);
 } 
+
+// main
 
 int main(){
     struct bstNode* root = NULL;
@@ -67,3 +74,6 @@ int main(){
         printf("\nNot found");
     }
 }
+
+// input: 8
+// output: Found
