@@ -1,16 +1,21 @@
 import java.util.Scanner;
 
+// class 
+
 class bstNode{
     int data;
     bstNode left;
     bstNode right;
 
+    // Constructor to create a new node
     bstNode(int num){
         data = num;
         left = null;
         right = null;
     }
 }
+
+//Main
 
 public class Main {
     public static void main(String[] args) {
@@ -36,6 +41,8 @@ public class Main {
             System.out.println("Not found");
         }
     }
+    
+    // Insert function
 
     public static bstNode Insert(bstNode pointer, int data){
         if(pointer == null){
@@ -49,6 +56,8 @@ public class Main {
         }
         return pointer;
     }
+    
+    //search function
 
     public static boolean search(bstNode pointer, int data){
         if(pointer == null) {
@@ -66,3 +75,6 @@ public class Main {
         }
     }
 }
+
+// input: 8
+// output: Found
