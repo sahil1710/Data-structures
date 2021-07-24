@@ -50,7 +50,7 @@ int findMax(struct bstNode* root){
     return root->data;
 }
 
-// function to find min integet in BST
+// function to find min integer in BST
 
 int findMin(struct bstNode* root){
     if(root == NULL){
