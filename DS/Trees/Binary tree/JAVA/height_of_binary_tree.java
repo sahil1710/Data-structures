@@ -1,13 +1,13 @@
 import java.lang.Math.*;
 
 //node class
-class bstNode{
+class btNode{
     int data;
-    bstNode left;
-    bstNode right;
+    btNode left;
+    btNode right;
 
     // Constructor to create a new node
-    bstNode(int num){
+    btNode(int num){
         data = num;
         left = null;
         right = null;
@@ -16,7 +16,7 @@ class bstNode{
 
 public class Main {
     public static void main(String[] args) {
-        bstNode root = null;
+        btNode root = null;
 
         root = Insert(root, 10);
         root = Insert(root, 8);
@@ -32,9 +32,9 @@ public class Main {
 
     // insert function
 
-    public static bstNode Insert(bstNode pointer, int data){
+    public static btNode Insert(btNode pointer, int data){
         if(pointer == null){
-            pointer = new bstNode(data);
+            pointer = new btNode(data);
         }
         else if(data<=pointer.data){
             pointer.left = Insert(pointer.left, data);
@@ -47,7 +47,7 @@ public class Main {
 
     // function to find height
 
-    public static int findHeight(bstNode root){
+    public static int findHeight(btNode root){
        if(root==null){
            return -1;
        }
