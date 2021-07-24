@@ -1,9 +1,12 @@
+#class
+
 class BstNode:
     def __init__(self, num):
         self.data = num
         self.left = None
         self.right = None
 
+#insert function
 
 def Insert(pointer, data):
     if pointer is None:
@@ -17,6 +20,7 @@ def Insert(pointer, data):
 
     return pointer
 
+#search function
 
 def Search(pointer, data):
     if pointer is None:
@@ -45,3 +49,6 @@ if __name__ == "__main__":
     num = int(input("Enter a number: "))
 
     print("Found" if Search(root, num) else "Not found")
+   
+# input: 8
+# output: Found
