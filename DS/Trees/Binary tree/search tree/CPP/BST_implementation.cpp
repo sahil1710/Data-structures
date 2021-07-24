@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// class for node
+
 class bstNode
 {
 public:
@@ -16,6 +18,7 @@ public:
 
 };
 
+//insert function
 
 bstNode* insert(bstNode* pointer, int data){
     if(pointer == NULL){
@@ -33,6 +36,8 @@ bstNode* insert(bstNode* pointer, int data){
     return pointer;
 }
 
+//search function
+
 bool search(bstNode* pointer, int data){
     if(pointer==NULL) return false;
     if(data == pointer->data) 
@@ -44,6 +49,8 @@ bool search(bstNode* pointer, int data){
     else
     return search(pointer->right, data);
 } 
+
+//main
 
 int main(){
     bstNode* root = NULL;
@@ -68,3 +75,6 @@ int main(){
         cout<<"\nNot found";
     }
 }
+
+// input: 8
+// output: Found
