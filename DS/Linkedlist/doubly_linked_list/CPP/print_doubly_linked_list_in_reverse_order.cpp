@@ -77,35 +77,6 @@ void insert(int index,int data){
     nodeCount++;
 }
 
-//delete node 
-void remove(int index){
-    //check index value
-    //if index is invalid then exit
-    if(index<0||index>nodeCount){
-        cout<<"Invalid index";
-        return;
-    }
-
-    node* temp1 = head;
-    if(index==1){
-        head = temp1->next;
-        head->prev = NULL;
-        delete(temp1);
-        return;
-    }
-    index -= 1;
-    while (index--)           //going at index node
-    {
-        temp1 = temp1->next;
-    }
-
-    //changing links to delete node
-    node* temp2 = temp1->prev;
-    temp2->next = temp1->next;
-    delete(temp1);
-    nodeCount--;
-}
-
 //print linked list in reverse order
 void reversePrint(){
     node* temp = head;
@@ -132,7 +103,10 @@ void reversePrint(){
 int main(){
     head = NULL;
     insertAtEnd(1);
-    insertAtEnd(2);
+    insert(2,2);
     insertAtEnd(3);
     reversePrint();
 }
+
+// output
+// 3 2 1 
