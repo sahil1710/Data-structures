@@ -77,40 +77,6 @@ void insert(int index,int data){
     nodeCount++;
 }
 
-//delete node 
-void remove(int index){
-    //check index value
-    //if index is invalid then exit
-    if(index<0||index>nodeCount){
-        cout<<"Invalid index";
-        return;
-    }
-    node* temp = head;
-    if(index==1){
-        head = temp->next;
-        head->prev = NULL;
-        free(temp);
-        return;
-    }
-    
-    index -= 1;
-    while (index--)           //going at index node
-    {
-        temp = temp->next;
-    }
-
-    if(temp->next!=NULL){
-        temp->next->prev = temp->prev;
-    }
-
-    if(temp->prev!=NULL){
-        temp->prev->next = temp->next;
-    }
-
-    free(temp);
-    nodeCount--;
-}
-
 //print list elements
 void print(){
     node* temp = head;
@@ -119,18 +85,19 @@ void print(){
         cout<<temp->data<<" ";
         temp = temp->next;
     }
+    cout<<"\n";
 }
 
 int main(){
     head = NULL;
-    insertAtEnd(1);
     insertAtEnd(2);
+    insertAtHead(1);
     insertAtEnd(3);
     insertAtEnd(4);
     insert(2,6);
-    remove(5);
+    cout<<"List: ";
     print();
 }
 
 // output
-// 1 6 2 3 
+// List: 1 6 2 3 4
