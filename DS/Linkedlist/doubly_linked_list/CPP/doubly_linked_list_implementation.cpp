@@ -55,7 +55,7 @@ void insertAtHead(int data){
 void insert(int index,int data){
     //check index value
     //if index is invalid then exit
-    if(index==1||index>=nodeCount){
+    if(index==1||index>nodeCount){
         cout<<"Invalid index";
         return;
     }
@@ -85,24 +85,29 @@ void remove(int index){
         cout<<"Invalid index";
         return;
     }
-
-    node* temp1 = head;
+    node* temp = head;
     if(index==1){
-        head = temp1->next;
+        head = temp->next;
         head->prev = NULL;
-        delete(temp1);
+        free(temp);
         return;
     }
+    
     index -= 1;
     while (index--)           //going at index node
     {
-        temp1 = temp1->next;
+        temp = temp->next;
     }
 
-    //changing links to delete node
-    node* temp2 = temp1->prev;
-    temp2->next = temp1->next;
-    delete(temp1);
+    if(temp->next!=NULL){
+        temp->next->prev = temp->prev;
+    }
+
+    if(temp->prev!=NULL){
+        temp->prev->next = temp->next;
+    }
+
+    free(temp);
     nodeCount--;
 }
 
@@ -121,10 +126,11 @@ int main(){
     insertAtEnd(1);
     insertAtEnd(2);
     insertAtEnd(3);
-    insert(2,4);
-    remove(4);
+    insertAtEnd(4);
+    insert(2,6);
+    remove(5);
     print();
 }
 
 // output
-// 1 4 2 
+// 1 6 2 3 
