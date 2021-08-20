@@ -77,34 +77,6 @@ class DoublyLinkedList{
             nodeCount++;
         }
 
-        //delete node
-        public void remove(int index){
-            node temp = head;
-            if(index<0||index>nodeCount) {
-                System.out.println("Invalid index");
-            }
-            else if(index==1){
-                head = temp.next;
-                head.prev = null;
-            }
-            else{
-                index -= 1;
-                //going at index node
-                while ((index--)>0){
-                    temp = temp.next;
-                }
-
-                //if node to be deleted is not the last node
-                //change next
-                if(temp.next!=null) temp.next.prev = temp.prev;
-                
-                //if node to be deleted is not the head node
-                //change prev
-                if(temp.prev!=null) temp.prev.next = temp.next;
-            }
-            nodeCount--;
-        }
-
         //print linked list
         public void print(){
             node temp = head;
@@ -129,14 +101,8 @@ public class Main {
         dll.insert(2,2);
         System.out.print("list: ");
         dll.print();
-
-        //remove one element
-        dll.remove(1);
-        System.out.print("After removing element: ");
-        dll.print();
     }
 }
 
 //output:
 //list: 1 2 3 4
-//After removing element: 2 3 4
