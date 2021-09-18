@@ -18,10 +18,10 @@ string parentheses(string str1, int n){
             else if(str1[i]==')'&& S.top()!='('){
                 return "parentheses are not balanced";
             }
-            else if(str1[i]=='{'&& S.top()!='{'){
+            else if(str1[i]=='}'&& S.top()!='{'){
                 return "parentheses are not balanced";
             }
-            else if(str1[i]=='['&& S.top()!='['){
+            else if(str1[i]==']'&& S.top()!='['){
                 return "parentheses are not balanced";
             }
             else S.pop();
